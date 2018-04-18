@@ -1,156 +1,124 @@
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-    <!--<title>百度地图DEMO</title>-->
-    <!--<meta charset="utf-8">-->
-    <!--<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />-->
-    <!--<style type="text/css">-->
-        <!--html{height:100%}-->
-        <!--body{height:100%;margin:0px;padding:0px}-->
-        <!--#container{height:100%}-->
-    <!--</style>-->
-    <!--<link rel="stylesheet" href="../../pub-ui/css/common.css">-->
-    <!--<script src="../../pub-ui/js/rem.js"></script>-->
-    <!--<script src="../../pub-ui/js/fastclick.js"></script>-->
-
-    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=Ey0Rac4bNhCgEy7kdxal8FwnmuHXuwUX"></script>-->
-<!--</head>-->
-<!--<body>-->
-<!--<div class="z-title font-bg">-->
-    <!--<span class="z-tit-lfi" onclick="goback()"></span>-->
-    <!--地图-->
-<!--</div>-->
-<!--<div id="container" ></div>-->
-<!--<script src="../../pub-ui/js/jquery-2.1.3.min.js"></script>-->
-    <!--<script type="text/javascript" src="map.js"></script>-->
-<!--</body>-->
-<!--</html>-->
-
-<!--<script type="text/javascript">-->
-
-    <!--// 百度地图API功能-->
-    <!--var map = new BMap.Map("container");-->
-    <!--//单点-->
-    <!--// var point = new BMap.Point(116.400244,39.92556);-->
-    <!--// map.centerAndZoom(point, 12);-->
-    <!--// var marker = new BMap.Marker(point);  // 创建标注-->
-    <!--// map.addOverlay(marker);              // 将标注添加到地图中-->
-    <!--// marker.addEventListener("click",getAttr);-->
-    <!--// function getAttr(){-->
-    <!--// 	var p = marker.getPosition();       //获取marker的位置-->
-    <!--// 	alert("marker的位置是" + p.lng + "," + p.lat);-->
-    <!--// }-->
-    <!--//-->
-    <!--// 多点-->
-    <!--// var point = new BMap.Point(116.404, 39.915);-->
-    <!--// map.centerAndZoom(point, 15);-->
-    <!--// // 编写自定义函数,创建标注-->
-    <!--// function addMarker(point){-->
-    <!--//   var marker = new BMap.Marker(point);-->
-    <!--//   map.addOverlay(marker);-->
-    <!--// }-->
-    <!--// // 随机向地图添加25个标注-->
-    <!--// var bounds = map.getBounds();-->
-    <!--// var sw = bounds.getSouthWest();-->
-    <!--// var ne = bounds.getNorthEast();-->
-    <!--// var lngSpan = Math.abs(sw.lng - ne.lng);-->
-    <!--// var latSpan = Math.abs(ne.lat - sw.lat);-->
-    <!--// for (var i = 0; i < 25; i ++) {-->
-    <!--// 	var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));-->
-    <!--// 	addMarker(point);-->
-    <!--// }-->
-    <!--//添加点的标注-->
-<!--//    map.centerAndZoom(new BMap.Point(116.417854,39.921988), 15);-->
-<!--//    var data_info = [[116.417854,39.921988,"地址：北京市东城区王府井大街88号乐天银泰百货八层"],-->
-<!--//        [116.406605,39.921585,"地址：北京市东城区东华门大街"],-->
-<!--//        [116.412222,39.912345,"地址：北京市东城区正义路甲5号"]-->
-<!--//    ];-->
-<!--//    var opts = {-->
-<!--//        width : 250,     // 信息窗口宽度-->
-<!--//        height: 80,     // 信息窗口高度-->
-<!--//        title : "信息窗口" , // 信息窗口标题-->
-<!--//        enableMessage:true//设置允许信息窗发送短息-->
-<!--//    };-->
-<!--//    for(var i=0;i<data_info.length;i++){-->
-<!--//        var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]));  // 创建标注-->
-<!--//        var content = data_info[i][2];-->
-<!--//        map.addOverlay(marker);               // 将标注添加到地图中-->
-<!--//        addClickHandler(content,marker);-->
-<!--//        // marker.addEventListener("click",attribute);-->
-<!--//-->
-<!--//-->
-<!--//    }-->
-<!--//    function addClickHandler(content,marker){-->
-<!--//        marker.addEventListener("click",function(e){-->
-<!--//            openInfo(content,e)}-->
-<!--//        );-->
-<!--//    }-->
-<!--//    function openInfo(content,e){-->
-<!--//        var p = e.target;-->
-<!--//        var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);-->
-<!--//        var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象-->
-<!--//        map.openInfoWindow(infoWindow,point); //开启信息窗口-->
-<!--//    }-->
-<!--//    function attribute(){-->
-<!--//        var p = marker.getPosition();  //获取marker的位置-->
-<!--//        alert("marker=========" + p.lng + "," + p.lat);-->
-<!--//    }-->
-
-
-    <!--//看看是否有点击事件-->
-     <!--var sContent =-->
-     <!--"<h4 style='margin:0 0 5px 0;padding:0.2em 0'>南昌</h4>" +-->
-     <!--"<h5 onclick='attribute()' style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门</h5>"+-->
-     <!--// "<p onclick='attribute()' style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +-->
-     <!--"</div>";-->
-     <!--var point = new BMap.Point(115.916878, 28.670972);//：28.6709720000,115.9168780000-->
-     <!--var marker = new BMap.Marker(point);-->
-     <!--var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象-->
-     <!--map.centerAndZoom(point, 15);-->
-     <!--map.addOverlay(marker);-->
-     <!--marker.addEventListener("click", function(){-->
-        <!--this.openInfoWindow(infoWindow);-->
-        <!--//图片加载完毕重绘infowindow-->
-        <!--// document.getElementById('imgDemo').onload = function (){-->
-     	  <!--//  infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏-->
-        <!--// }-->
-     <!--});-->
-     <!--function attribute(){-->
-<!--//     	var p = marker.getPosition();  //获取marker的位置-->
-<!--//     	alert("经纬度：" + p.lng + "," + p.lat);-->
-         <!--window.location.href = "../attention/attention.html"-->
-     <!--}-->
-<!--</script>-->
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
+    <title>百度地图DEMO</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Hello, World</title>
     <style type="text/css">
         html{height:100%}
         body{height:100%;margin:0px;padding:0px}
         #container{height:100%}
     </style>
-    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥">-->
-        <!--//v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"-->
-    <!--</script>-->
+    <link rel="stylesheet" href="../../pub-ui/css/common.css">
+    <script src="../../pub-ui/js/rem.js"></script>
+    <script src="../../pub-ui/js/fastclick.js"></script>
+
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=Ey0Rac4bNhCgEy7kdxal8FwnmuHXuwUX"></script>
-
 </head>
-
 <body>
-<div id="container"></div>
-<script type="text/javascript">
-    var map = new BMap.Map("container");
-    // 创建地图实例
-    var point = new BMap.Point(116.404, 39.915);
-    // 创建点坐标
-    map.centerAndZoom(point, 15);
-    // 初始化地图，设置中心点坐标和地图级别
-</script>
+<div class="z-title font-bg">
+    <span class="z-tit-lfi" onclick="goback()"></span>
+    地图
+</div>
+<div id="container" ></div>
+<script src="../../pub-ui/js/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="map.js"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+
+    // 百度地图API功能
+    var map = new BMap.Map("container");
+    //单点
+    // var point = new BMap.Point(116.400244,39.92556);
+    // map.centerAndZoom(point, 12);
+    // var marker = new BMap.Marker(point);  // 创建标注
+    // map.addOverlay(marker);              // 将标注添加到地图中
+    // marker.addEventListener("click",getAttr);
+    // function getAttr(){
+    // 	var p = marker.getPosition();       //获取marker的位置
+    // 	alert("marker的位置是" + p.lng + "," + p.lat);
+    // }
+    //
+    // 多点
+    // var point = new BMap.Point(116.404, 39.915);
+    // map.centerAndZoom(point, 15);
+    // // 编写自定义函数,创建标注
+    // function addMarker(point){
+    //   var marker = new BMap.Marker(point);
+    //   map.addOverlay(marker);
+    // }
+    // // 随机向地图添加25个标注
+    // var bounds = map.getBounds();
+    // var sw = bounds.getSouthWest();
+    // var ne = bounds.getNorthEast();
+    // var lngSpan = Math.abs(sw.lng - ne.lng);
+    // var latSpan = Math.abs(ne.lat - sw.lat);
+    // for (var i = 0; i < 25; i ++) {
+    // 	var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7), ne.lat - latSpan * (Math.random() * 0.7));
+    // 	addMarker(point);
+    // }
+    //添加点的标注
+//    map.centerAndZoom(new BMap.Point(116.417854,39.921988), 15);
+//    var data_info = [[116.417854,39.921988,"地址：北京市东城区王府井大街88号乐天银泰百货八层"],
+//        [116.406605,39.921585,"地址：北京市东城区东华门大街"],
+//        [116.412222,39.912345,"地址：北京市东城区正义路甲5号"]
+//    ];
+//    var opts = {
+//        width : 250,     // 信息窗口宽度
+//        height: 80,     // 信息窗口高度
+//        title : "信息窗口" , // 信息窗口标题
+//        enableMessage:true//设置允许信息窗发送短息
+//    };
+//    for(var i=0;i<data_info.length;i++){
+//        var marker = new BMap.Marker(new BMap.Point(data_info[i][0],data_info[i][1]));  // 创建标注
+//        var content = data_info[i][2];
+//        map.addOverlay(marker);               // 将标注添加到地图中
+//        addClickHandler(content,marker);
+//        // marker.addEventListener("click",attribute);
+//
+//
+//    }
+//    function addClickHandler(content,marker){
+//        marker.addEventListener("click",function(e){
+//            openInfo(content,e)}
+//        );
+//    }
+//    function openInfo(content,e){
+//        var p = e.target;
+//        var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+//        var infoWindow = new BMap.InfoWindow(content,opts);  // 创建信息窗口对象
+//        map.openInfoWindow(infoWindow,point); //开启信息窗口
+//    }
+//    function attribute(){
+//        var p = marker.getPosition();  //获取marker的位置
+//        alert("marker=========" + p.lng + "," + p.lat);
+//    }
+
+
+    //看看是否有点击事件
+     var sContent =
+     "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>南昌</h4>" +
+     "<h5 onclick='attribute()' style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门</h5>"+
+     // "<p onclick='attribute()' style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>天安门坐落在中国北京市中心,故宫的南侧,与天安门广场隔长安街相望,是清朝皇城的大门...</p>" +
+     "</div>";
+     var point = new BMap.Point(115.916878, 28.670972);//：28.6709720000,115.9168780000
+     var marker = new BMap.Marker(point);
+     var infoWindow = new BMap.InfoWindow(sContent);  // 创建信息窗口对象
+     map.centerAndZoom(point, 15);
+     map.addOverlay(marker);
+     marker.addEventListener("click", function(){
+        this.openInfoWindow(infoWindow);
+        //图片加载完毕重绘infowindow
+        // document.getElementById('imgDemo').onload = function (){
+     	  //  infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
+        // }
+     });
+     function attribute(){
+//     	var p = marker.getPosition();  //获取marker的位置
+//     	alert("经纬度：" + p.lng + "," + p.lat);
+         window.location.href = "../attention/attention.html"
+     }
+</script>
+
